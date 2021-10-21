@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      input.pipe{
+        width:30%
+      }
+      div.line{
+        width:100%;
+      }
+ 
+	  div.space{
+		width:20%;
+		float:left;
+		text-align:center;
+	  }
+ 
+    div.spac{
+		width:5%;
+		float:left;
+		text-align:center;
+	  }
+	  button.bot{
+		width=100%;
+	  }
+ 
+	  div.l{
+		width:30%;
+		float:left;
+	  }
+ 
+	  div.r{
+		width:5%;
+		float:left;
+	  }
+ 
+    .dado{
+      border-radius: 12% 12% 12% 12%;
+      -moz-border-radius: 12% 12% 12% 12%;
+      -webkit-border-radius: 12% 12% 12% 12%;
+      border: 2px solid black;
+      width: 3%;
+      height: 7%;
+      background-color: white;
+      padding: 2% 2% 2% 2%;
+      float: left;
+      text-align:center;
+    }
+ 
+    .circ{
+ 
+      border-radius: 50% 50% 50% 50%;
+      -moz-border-radius: 50% 50% 50% 50%;
+      -webkit-border-radius: 50% 50% 50% 50%;
+      border: 0px solid black;
+      background-color: black;
+      width: 28%;
+      height: 28%;
+      float: left;
+      padding: 1% 1% 1% 1%;
+    }
+ 
+    .circu{
+ 
+            border-radius: 50% 50% 50% 50%;
+            -moz-border-radius: 50% 50% 50% 50%;
+            -webkit-border-radius: 50% 50% 50% 50%;
+            border: 0px solid black;
+            background-color: black;
+            width: 80%;
+            height: 80%;
+            float: left;
+            padding: 2% 2% 2% 2%;
+            align-items: center;
+    }
+ 
+    div.content{
+      padding: 2px 2px 2px 2px;
+      border-top: 0px;
+      border-bottom: 0px;
+      border-style: solid;
+    }
+ 
+ 
+    </style>
+  </head>
+  <body onload="action();">
+    <script language="javascript">
+ 
+    function numeroAleatorio(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
+    }
+ 
+    function pub(id,num){
+      switch(num){
+        case 1:{
+          document.getElementById(id).innerHTML="<div class='circu'>&nbsp</div><div class='space'>&nbsp</div>";
+          break;
+        }
+        case 2:{
+          document.getElementById(id).innerHTML="<br/><div class='circ'>&nbsp</div><div class='space'>&nbsp</div><div class='circ'>&nbsp</div>";
+          break;
+        }
+        case 3:{
+          document.getElementById(id).innerHTML="<div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <br/> <div class='circ'>&nbsp</div>";
+ 
+          break;
+        }
+        case 4:{
+          document.getElementById(id).innerHTML="<div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <br/> <div class='circ'>&nbsp</div>  <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div>";
+          break;
+        }
+        case 5:{
+          document.getElementById(id).innerHTML="<div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <br/> <div class='circ'>&nbsp</div>  <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <br/> <div class='circ'>&nbsp</div>";
+          break;
+        }
+        case 6:{
+          document.getElementById(id).innerHTML="<div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <br/> <div class='circ'>&nbsp</div>  <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <br/> <div class='circ'>&nbsp</div> <div class='space'>&nbsp</div> <div class='circ'>&nbsp</div>";
+          break;
+        }
+      }
+    }
+ 
+    function action(){
+      var dados=[];
+      for(i=0;i<5;i++){
+        dados[i]=numeroAleatorio(1,6);
+      }
+ 
+      pub("uno",dados[0]);
+      pub("dos",dados[1]);
+      pub("tres",dados[2]);
+      pub("cuatro",dados[3]);
+      pub("cinco",dados[4]);
+      //document.getElementById('uno').innerHTML="<div class="circ">&nbsp</div><div class="space">&nbsp</div>";
+    }
+ 
+ 
+ 
+ 
+    </script>
+    <button name="lanza" id="lanza" onclick="action();"><h4>LANZA LOS DADOS</h4></button>
+    <br/><br/>
+    <div>
+    <div class="dado" id="uno" name="uno"></div>
+    <div class="spac">&nbsp</div>
+    <div class="dado" id="dos" name="dos"></div>
+    <div class="spac">&nbsp</div>
+    <div class="dado" id="tres" name="tres"></div>
+    <div class="spac">&nbsp</div>
+    <div class="dado" id="cuatro" name="cuatro"></div>
+    <div class="spac">&nbsp</div>
+    <div class="dado" id="cinco" name="cinco"></div>
+    </div>
+ 
+ 
+  </body>
+</html>

@@ -13,17 +13,23 @@
             $this->ample = $ample;
             $this->alt = $alt;
         }
-    }
-    class triangle extends shape{
         public function area_triangle(){
             return(($this->ample * $this->alt)/2);
         }
-
-    }
-    class rectangle extends shape{
         public function area_rectangle(){
             return($this->ample * $this->alt);
         }
+    }
+    class triangle extends shape{
+        public function get_area_triangle(){
+            return parent::area_triangle();
+        }
+    }
+    class rectangle extends shape{
+        public function get_area_rectangle(){
+            return parent::area_rectangle();
+        }
+        
     }
 
     if(! empty($_POST)){
@@ -31,8 +37,8 @@
     $alt = (int)$_POST["alt"];
     $triangle = new triangle($ample, $alt);
     $rectangle = new rectangle($ample, $alt);
-    echo 'El area del triangle es '.$triangle->area_triangle().'<br>';
+    echo 'El area del triangle es '.$triangle->get_area_triangle().'<br>';
     
-    echo 'El area de rectangle es '.$rectangle->area_rectangle();
+    echo 'El area de rectangle es '.$rectangle->get_area_rectangle();
     }
 ?>
