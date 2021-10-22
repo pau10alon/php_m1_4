@@ -33,8 +33,8 @@
     }
 
     if(! empty($_POST)){
-    $ample = (int)$_POST["ample"];
-    $alt = (int)$_POST["alt"];
+    $ample = (float)$_POST["ample"];
+    $alt = (float)$_POST["alt"];
     $triangle = new triangle($ample, $alt);
     $rectangle = new rectangle($ample, $alt);
     echo 'El area del triangle es '.$triangle->get_area_triangle().'<br>';
