@@ -39,7 +39,7 @@ class pokerDice {
                 echo '<img src="img/rojo.jpg">';
                 break;
             case 3:
-                ECHO '<IMG SRC="IMG/J.JPG">';
+                echo '<img src="img/j.jpg">';
                 break;
             case 4:
                 echo '<img src="img/q.jpg">';
@@ -150,8 +150,7 @@ class pokerDice {
                 echo "Error";
                 break;
         }
-
-    }
+     }
     public function shapeName(){
         switch ($this->aleatorio1) {
             case 1:
@@ -267,28 +266,27 @@ class pokerDice {
             default:
                 echo "Error";
                 break;
-        }
-        
+        }       
     }
 }
-
-    if (isset($_POST["inicio"])){
-        $boton1 = $_POST["inicio"];
-    }
-    if (isset($_POST["tirar"])){
-        $boton2 = $_POST["tirar"];
-    }
+if (isset($_POST["inicio"])){
+  $boton1 = $_POST["inicio"];
+}
+if (isset($_POST["tirar"])){
+  $boton2 = $_POST["tirar"];
+}
     
-    if (isset($boton1)){
-        if ($boton1=="inicio"){
-          $_SESSION["tirada"]=0;
+if (isset($boton1)){
+    if ($boton1=="inicio"){
+      $_SESSION["tirada"]=0;
     }
-    if (isset($boton2)){
-        if ($boton2=="lanza"){
-            $pokerDice = new pokerDice();
-            $pokerDice -> tirar();
-            $pokerDice -> shapeName();
-            echo "<br>";
-        }
-    }
+}
+if (isset($boton2)){
+  if ($boton2=="lanza"){
+    $pokerDice = new pokerDice();
+    $pokerDice->tirar();
+    $pokerDice->shapeName();
+    echo "<br>";
+  }
+}
 ?>
