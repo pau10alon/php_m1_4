@@ -2,7 +2,7 @@
   //Comienzo sesion
   session_start();
 ?>
-  
+ 
 <Doctype html>
 <html>
     <head>
@@ -12,7 +12,7 @@
 <body>
     <form action="aleatorios.php" method="post">
         <input type="submit" name="inicio" value ="inicio">
-        <input type="submit" name="tirar" value ="lanza">    
+        <input type="submit" name="tirar" value ="lanza">
     </form>
 </body>
 </html>
@@ -39,7 +39,7 @@ class pokerDice {
                 echo '<img src="img/rojo.jpg">';
                 break;
             case 3:
-                echo '<img src="img/j.jpg">';
+                ECHO '<IMG SRC="IMG/J.JPG">';
                 break;
             case 4:
                 echo '<img src="img/q.jpg">';
@@ -282,7 +282,6 @@ class pokerDice {
     if (isset($boton1)){
         if ($boton1=="inicio"){
           $_SESSION["tirada"]=0;
-        }
     }
     if (isset($boton2)){
         if ($boton2=="lanza"){
@@ -292,7 +291,4 @@ class pokerDice {
             echo "<br>";
         }
     }
-
-
-
 ?>
